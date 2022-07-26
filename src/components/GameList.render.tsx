@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import { ReactElement } from "react";
 import { Game } from "../types/Games.types";
 import GameCard from "./GameCards";
@@ -17,13 +18,17 @@ function GameListRender({ err, games }: Props): ReactElement {
   );
   return (
     <ul>
-      {games.map((game) => {
-        return (
-          <li key={game.id}>
-            <GameCard content={game} />
-          </li>
-        );
-      })}
+      <Grid container spacing={3} justifyContent={"center"}>
+        {games.map((game) => {
+          return (
+            <Grid item key={game.id}>
+              <li>
+                <GameCard content={game} />
+              </li>
+            </Grid>
+          );
+        })}
+      </Grid>
     </ul>
   );
 }

@@ -16,15 +16,16 @@ const GameCard = ({ content }: Props): ReactElement => {
   const link = `/game/${id}`;
   return (
     <Link to={link}>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ width: 345 }}>
         <CardActionArea>
           <CardMedia
             component="img"
             height="140"
             image={thumbnail}
             alt={`${title} logo`}
+            sx={{ minWidth: 345 }}
           />
-          <CardContent>
+          <CardContent sx={{ height: "10rem" }}>
             <Typography gutterBottom variant="h5" component="div">
               {title}
             </Typography>
