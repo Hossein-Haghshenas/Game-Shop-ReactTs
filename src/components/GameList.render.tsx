@@ -18,7 +18,12 @@ function GameListRender({ err, games }: Props): ReactElement {
   );
   return (
     <ul>
-      <Grid container spacing={3} justifyContent={"center"}>
+      <Grid
+        container
+        spacing={3}
+        justifyContent={"center"}
+        sx={{ marginTop: "1rem" }}
+      >
         {games.map((game) => {
           return (
             <Grid item key={game.id}>

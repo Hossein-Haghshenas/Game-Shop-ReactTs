@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import { CardActionArea, CardActions, Chip } from "@mui/material";
 
 interface Props {
   content: Game;
@@ -32,10 +32,10 @@ const GameCard = ({ content }: Props): ReactElement => {
             <Typography variant="body2" color="text.secondary">
               {short_description}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {genre}
-            </Typography>
           </CardContent>
+          <CardActions>
+            <Chip label={genre} variant="outlined" />
+          </CardActions>
         </CardActionArea>
       </Card>
     </Link>
