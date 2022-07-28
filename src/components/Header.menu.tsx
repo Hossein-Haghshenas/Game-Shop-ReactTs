@@ -117,7 +117,15 @@ const HeaderMenu = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                <NavLink to={page.includes("Home") ? "/" : `/${page}`}>
+                <NavLink
+                  to={
+                    page.includes("Home")
+                      ? "/"
+                      : page.includes("About Us")
+                      ? `/AboutUs`
+                      : `/${page}`
+                  }
+                >
                   {page}
                 </NavLink>
               </Button>
