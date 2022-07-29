@@ -57,7 +57,16 @@ const Cards = ({ img, title, description, genre }: CardProps): ReactElement => {
               variant="outlined"
               sx={{ color: "white" }}
             />
-            <Box>
+            <Box
+              sx={{
+                borderRadius: "50%",
+                padding: "0.2rem 0.4rem",
+                transition: "all 0.5s ease",
+                "&:hover": {
+                  backgroundColor: "#a200c2ca",
+                },
+              }}
+            >
               <CloudDownloadRoundedIcon />
             </Box>
           </Grid>

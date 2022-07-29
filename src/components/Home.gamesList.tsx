@@ -18,7 +18,10 @@ const GamesList = ({ homeGames }: HomeProps): ReactElement => {
         >
           <Box
             sx={{
-              padding: "0.1rem 0.3rem",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "0.3rem",
               marginRight: "0.5rem",
               borderRadius: "50%",
               bgcolor: "magenta",
