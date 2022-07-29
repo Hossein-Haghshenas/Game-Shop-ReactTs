@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import Cards from "./Cards";
 import { Typography } from "@mui/material";
 import { Box } from "@mui/material";
@@ -9,10 +9,10 @@ import { HomeProps } from "../types/HomeGames.types";
 const GamesList = ({ homeGames }: HomeProps): ReactElement => {
   return (
     <>
-      <Grid container paddingX={{ xs: "1rem", sm: "7rem" }} paddingY={"1rem"}>
+      <Grid container paddingX={{ xs: "1rem", sm: "7rem" }} paddingY={"0.5rem"}>
         <Typography
           variant="h6"
-          marginY={"3rem"}
+          marginY={"2rem"}
           color={"azure"}
           sx={{ display: "flex", alignItems: "center" }}
         >
@@ -41,6 +41,18 @@ const GamesList = ({ homeGames }: HomeProps): ReactElement => {
               </Grid>
             );
           })}
+        </Grid>
+        <Grid container justifyContent={"center"} marginTop={"2rem"}>
+          <Button
+            variant="contained"
+            sx={{
+              color: "azure",
+              backgroundColor: "magenta",
+              marginTop: "1rem",
+            }}
+          >
+            NEXT PAGE
+          </Button>
         </Grid>
       </Grid>
     </>
