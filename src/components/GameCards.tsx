@@ -5,7 +5,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, CardActions, Chip } from "@mui/material";
+import { CardActionArea, CardActions, Chip, Grid } from "@mui/material";
+import { Box } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 interface Props {
   content: Game;
@@ -16,7 +18,12 @@ const GameCard = ({ content }: Props): ReactElement => {
   const link = `/game/${id}`;
   return (
     <Link to={link}>
-      <Card sx={{ width: 345 }}>
+      <Card
+        sx={{
+          width: 345,
+          backgroundColor: "#202020",
+        }}
+      >
         <CardActionArea>
           <CardMedia
             component="img"
@@ -26,15 +33,39 @@ const GameCard = ({ content }: Props): ReactElement => {
             sx={{ minWidth: 345 }}
           />
           <CardContent sx={{ height: "10rem" }}>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component="div" color="azure">
               {title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color={"azure"}>
               {short_description}
             </Typography>
           </CardContent>
           <CardActions>
-            <Chip label={genre} variant="outlined" />
+            <Grid
+              container
+              justifyContent={"space-between"}
+              alignItems={"center"}
+            >
+              <Chip label={genre} variant="outlined" sx={{ color: "azure" }} />
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "0.4rem",
+                  color: "azure",
+                  borderRadius: "50%",
+                  border: "1px solid azure",
+                  transition: "all 0.5s ease",
+                  "&:hover": {
+                    borderColor: "magenta",
+                    backgroundColor: "magenta",
+                  },
+                }}
+              >
+                <ShoppingCartIcon />
+              </Box>
+            </Grid>
           </CardActions>
         </CardActionArea>
       </Card>
