@@ -81,7 +81,15 @@ const HeaderMenu = () => {
               {pages.map((page) => (
                 <MenuItem onClick={handleCloseNavMenu} key={page}>
                   <Typography textAlign="center" color="black">
-                    <NavLink to={page.includes("Home") ? "/" : `/${page}`}>
+                    <NavLink
+                      to={
+                        page.includes("Home")
+                          ? "/"
+                          : page.includes("About Us")
+                          ? `/AboutUs`
+                          : `/${page}`
+                      }
+                    >
                       {page}
                     </NavLink>
                   </Typography>
