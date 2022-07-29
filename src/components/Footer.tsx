@@ -34,7 +34,7 @@ const Footer = (): ReactElement => {
             }}
             color={"magenta"}
           >
-            Shope
+            Shop
           </Typography>
         </Typography>
         <Typography>Hossein Developer © All Rights Reserved</Typography>
