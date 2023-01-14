@@ -10,7 +10,6 @@ const Footer = (): ReactElement => {
         justifyContent={"space-around"}
         alignItems={"center"}
         marginTop={"1rem"}
-        paddingY={"1rem"}
         color={"azure"}
       >
         <Typography
