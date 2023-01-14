@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,15 +9,27 @@
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   background: rgb(39, 39, 39);
-  background: linear-gradient(
-    0deg,
-    rgba(39, 39, 39, 0.9475140397956058) 11%,
-    rgba(56, 28, 93, 0.9643207624846813) 34%,
-    rgba(95, 25, 111, 0.9755252442773985) 64%
-  );
+  background: linear-gradient(0deg,
+      rgba(39, 39, 39, 0.9475140397956058) 11%,
+      rgba(56, 28, 93, 0.9643207624846813) 34%,
+      rgba(95, 25, 111, 0.9755252442773985) 64%);
   font-family: "Poppins", sans-serif;
+}
+
+header {
+  height: 4.5rem;
+}
+
+footer {
+  height: 4rem;
+}
+
+main {
+  width: 100%;
+  min-height: calc(100vh - 9.5rem);
 }
 
 li {
