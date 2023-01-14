@@ -1,29 +1,19 @@
 import { ReactElement } from "react";
 import { Box, Grid } from "@mui/material";
 import { Typography } from "@mui/material";
-import assasing from "./../assets/image/assassins_creed.png";
+import gameVector from "./../assets/image/game-vector.png";
 
 const AboutUs = (): ReactElement => {
   return (
-    <Grid container justifyContent={"space-around"} minHeight={"78vh"}>
-      <Grid container justifyContent={"center"}>
-        <Box
-          sx={{
-            width: "26rem",
-            height: "26rem",
-            borderRadius: "50%",
-            backgroundImage: `url(${assasing})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-      </Grid>
-      <Grid container alignItems={"center"} justifyContent={"center"}>
-        <Typography variant="h5" color={"azure"} align={"center"}>
-          Im junior web developer
-          <br /> My main language is Javascript
+    <Grid container flexDirection={{ sm: "row", xs: "column" }} justifyContent={{ sm: "space-around", xs: "center" }} minHeight="calc(100vh - 9.5rem)">
+      <Box width={{ sm: "50%", xs: "100%" }} display="flex" justifyContent={"center"} padding="1rem">
+        <img src={gameVector} width="100%" alt="" />
+      </Box>
+      <Box width={{ sm: "50%", xs: "100%" }} display="flex" alignItems={"center"} justifyContent={"center"} padding="1rem">
+        <Typography variant="h5" fontSize={{ sm: "25px",md:"30px", xs: "20px" }} color="azure">
+          The Game Shop company started its activity in 2010 <br /> and has always tried to provide <br /> the best services to its users.
         </Typography>
-      </Grid>
+      </Box>
     </Grid>
   );
 };
