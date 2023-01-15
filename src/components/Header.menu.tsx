@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchBar from "./SearchBar";
 import { NavLink } from "react-router-dom";
 
-const pages = ["Home", "Games", "About Us"];
+const pages = [{ name: "Home", route: "/", id: 1 }, { name: "Games", route: "/games", id: 2 }, { name: "About Us", route: "/aboutUs", id: 3 }];
 
 const HeaderMenu = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -79,18 +79,12 @@ const HeaderMenu = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem onClick={handleCloseNavMenu} key={page}>
+                <MenuItem onClick={handleCloseNavMenu} key={page.id}>
                   <Typography textAlign="center" color="black">
                     <NavLink
-                      to={
-                        page.includes("Home")
-                          ? "/"
-                          : page.includes("About Us")
-                          ? `/AboutUs`
-                          : `/${page}`
-                      }
+                      to={page.route}
                     >
-                      {page}
+                      {page.name}
                     </NavLink>
                   </Typography>
                 </MenuItem>
@@ -121,20 +115,14 @@ const HeaderMenu = () => {
           >
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.id}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <NavLink
-                  to={
-                    page.includes("Home")
-                      ? "/"
-                      : page.includes("About Us")
-                      ? `/AboutUs`
-                      : `/${page}`
-                  }
+                  to={page.route}
                 >
-                  {page}
+                  {page.name}
                 </NavLink>
               </Button>
             ))}
