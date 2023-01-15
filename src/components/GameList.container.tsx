@@ -12,16 +12,12 @@ const GameListContainer = (): ReactElement => {
 
   if (isLoading) {
     return (
-      <Grid position="absolute" top="40%" container justifyContent="center" alignItems="center">
-        <Loading />
-      </Grid>
+      <Loading />
     )
   }
   if (isError) {
     return (
-      <Grid position="absolute" top="35%" container justifyContent="center" alignItems="center">
-        <Error errorMsg={error.message} />
-      </Grid>
+      <Error errorMsg={error.message} />
     )
   }
   return <>
