@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Game } from "../types/Games.types";
+import { Game, GameDetails } from "../types/Games.types";
 import { API_HOST, API_KEY } from "../constants/api_key";
 
 
@@ -14,13 +14,14 @@ export const getAllGames = async (): Promise<Game[]> => {
   return data as Game[];
 };
 
-export const getGameDetails = async (): Promise<Game[]> => {
-  const baseURL: string = `https://free-to-play-games-database.p.rapidapi.com/api/games?pc/id?517` ?? ''
+export const getGameDetails = async (id?: string): Promise<GameDetails> => {
+  const baseURL: string = `https://free-to-play-games-database.p.rapidapi.com/api/game` ?? ''
   const { data } = await axios.get(baseURL, {
+    params: { id },
     headers: {
       "X-RapidAPI-Key": API_KEY,
       "X-RapidAPI-Host": API_HOST,
     }
   });
-  return data as Game[];
+  return data as GameDetails;
 };
